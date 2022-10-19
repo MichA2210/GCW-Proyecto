@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script> 
+    <script type="text/javascript" src="js/script"></script> 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#btnJugar').click(function(){
+                window.location.href = "Escenario1.html";
+            });
+        });
+    </script>
+</head>
+
+<body id="background_menu">
+    <center>
+        <div id="contenedor">
+            <div id="botones">
+                <div>
+                    <button class="btn" id="btnJugar">Jugar</button>
+                </div>
+                <div>
+                    <button class="btn" id="btn2">Este boton no hace nada</button>
+                </div>
+                <div>
+                    <button class="btn" id="btn3">Este boton no hace nada 2</button>
+                </div>
+            </div>
+        </div>
+    </center>
+</body>
+</html>
