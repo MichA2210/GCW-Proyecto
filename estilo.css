@@ -27,3 +27,12 @@ body {
 .btn:hover{
     background-color: rgb(248, 240, 163);
 }
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgb(248, 242, 190);;
+}
+table, th, td {
+    border: 1px solid;
+  }

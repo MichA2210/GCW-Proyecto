@@ -11,7 +11,16 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $('#btnJugar').click(function(){
-                window.location.href = "Escenario1.html";
+                window.location.href = "Levels.html";
+            });
+            $('#btnJugar2').click(function(){
+                window.location.href = "Levels.html";
+            });
+            $('#btnConfig').click(function(){
+                window.location.href = "config.html";
+            });
+            $('#btnPunta').click(function(){
+                window.location.href = "puntajes.html";
             });
         });
     </script>
@@ -22,16 +31,24 @@
         <div id="contenedor">
             <div id="botones">
                 <div>
-                    <button class="btn" id="btnJugar">Jugar</button>
+                    <button class="btn" id="btnJugar">Jugar Solo</button>
                 </div>
                 <div>
-                    <button class="btn" id="btn2">Este boton no hace nada</button>
+                    <button class="btn" id="btnJugar2">Multijugador</button>
                 </div>
                 <div>
-                    <button class="btn" id="btn3">Este boton no hace nada 2</button>
+                    <button class="btn" id="btnConfig">Configuración</button>
+                </div>
+                <div>
+                    <button class="btn" id="btnPunta">Puntuaciones</button>
                 </div>
             </div>
         </div>
     </center>
+    <audio autoplay loop controls>
+        <source src="audio/bkgMusic.mp3" type="audio/mp3"/>
+        <source src="audio/bkgMusic.ogg" type="audio/ogg"/>
+        Tu navegador no es compatible con el audio de HTML5
+    </audio>
 </body>
 </html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccion de Nivel</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script> 
+    <script type="text/javascript" src="js/script"></script> 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#btn1').click(function(){
+                window.location.href = "Level1/Escenario1.html";
+            });
+            $('#btn2').click(function(){
+                window.location.href = "Level2/Escenario2.html";
+            });
+            $('#btn3').click(function(){
+                window.location.href = "Level3/Escenario3.html";
+            });
+        });
+    </script>
+</head>
+
+<body id="background_menu">
+    <center>
+        <div id="contenedor">
+            <div id="botones">
+                <div>
+                    <button class="btn" id="btn1">Granja (facil)</button>
+                </div>
+                <div>
+                    <button class="btn" id="btn2">Western (normal)</button>
+                </div>
+                <div>
+                    <button class="btn" id="btn3">Galeria de Tiro (dificil)</button>
+                </div>
+            </div>
+        </div>
+    </center>
+    <audio autoplay loop>
+        <source src="audio/bkgMusic.mp3" type="audio/mp3"/>
+        <source src="audio/bkgMusic.ogg" type="audio/ogg"/>
+        Tu navegador no es compatible con el audio de HTML5
+    </audio>
+</body>
+</html>
