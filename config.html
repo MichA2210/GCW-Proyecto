@@ -10,20 +10,93 @@
     <script type="text/javascript" src="js/script"></script> 
     <script type="text/javascript">
         $(document).ready(function(){
+            $('#btnAceptar').click(function(){
+                var chek = document.getElementById("cbox1");
+                var son = document.getElementById("Sonido");
+                
+                localStorage.setItem("Musica", chek.checked);
+                localStorage.setItem("volumen", son.value);
+                window.location.href = "index.html";
+            });
+            $('#btnCancelar').click(function(){
+                window.location.href = "index.html";
+            });
+
+            var Musica = localStorage.getItem("Musica");
+            var volumen = localStorage.getItem("volumen");
+            if(Musica == null){
+                Musica = "true";
+            }
+            if(volumen == null){
+                volumen = "50";
+            }
+
+            if(Musica== "true"){
+                var chek = document.getElementById("cbox1");
+                chek.checked = true; 
+            }
+            else
+            {
+                 var chek = document.getElementById("cbox1");
+                chek.checked = false; 
+            }
+
+           var inte = parseInt(volumen,"10");
+           var son = document.getElementById("Sonido");
+           son.value=inte;
+
+           var audio = new Audio("audio/bkgMusic.mp3");
+           var Musica = localStorage.getItem("Musica");
+           var volumen = localStorage.getItem("volumen");
+           if(Musica == null){
+               Musica = "true";
+           }
+           if(volumen == null){
+               volumen = "50";
+           }
+           if(Musica== "true"){
+               var inte = parseInt(volumen,"10");
+               audio.volume =  0.1;
+               audio.loop = true;
+           }
+           else{
+               audio.volume=0;
+           }
+
+           $('#background_menu').mouseenter(function(){
+               audio.play();
+           });
+
         });
     </script>
 </head>
 
 <body id="background_menu">
-    <center>
-        <div id="contenedor">
-            
+    <center> 
+        <div id="opciones">  
+            <div class="texto opc">
+                <label>Musica<input type="checkbox" id="cbox1" value="first_checkbox"></label><br>
+            </div>
+            <div class ="slidecontainer opc">
+                <div class="texto">
+                    Sonido
+
+                <input  id = "Sonido" type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                </div>
+            </div>
         </div>
+            <div>
+                <button class="btn" id="btnAceptar">Aceptar</button>
+                <button class="btn" id="btnCancelar">Cancelar</button>
+            </div>
     </center>
-    <audio autoplay loop>
+
+    <!-- 
+    <audio autoplay loop controls>
         <source src="audio/bkgMusic.mp3" type="audio/mp3"/>
         <source src="audio/bkgMusic.ogg" type="audio/ogg"/>
         Tu navegador no es compatible con el audio de HTML5
     </audio>
+    -->
 </body>
 </html>

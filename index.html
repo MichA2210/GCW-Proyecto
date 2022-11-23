@@ -22,6 +22,31 @@
             $('#btnPunta').click(function(){
                 window.location.href = "puntajes.html";
             });
+
+            var audio = new Audio("audio/bkgMusic.mp3");
+            var Musica = localStorage.getItem("Musica");
+            var volumen = localStorage.getItem("volumen");
+            if(Musica == null){
+                Musica = "true";
+            }
+            if(volumen == null){
+                volumen = "50";
+            }
+            if(Musica== "true"){
+                var inte = parseInt(volumen,"10");
+                audio.volume =  0.1;
+                audio.loop = true;
+            }
+            else{
+                audio.volume=0;
+            }
+
+            $('#background_menu').mouseenter(function(){
+                audio.play();
+            });
+            /* $('#btnJugar').mouseenter(function(){
+                audio.play();
+            }); */
         });
     </script>
 </head>
@@ -45,10 +70,12 @@
             </div>
         </div>
     </center>
+    <!-- 
     <audio autoplay loop controls>
         <source src="audio/bkgMusic.mp3" type="audio/mp3"/>
         <source src="audio/bkgMusic.ogg" type="audio/ogg"/>
         Tu navegador no es compatible con el audio de HTML5
     </audio>
+    -->
 </body>
 </html>

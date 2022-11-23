@@ -6,6 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script> 
     <title>Escenario 1</title>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            var audio = new Audio("audio/bkgMusic.mp3");
+            var Musica = localStorage.getItem("Musica");
+            var volumen = localStorage.getItem("volumen");
+            if(Musica == null){
+                Musica = "true";
+            }
+            if(volumen == null){
+                volumen = "50";
+            }
+            if(Musica== "true"){
+                var inte = parseInt(volumen,"10");
+                audio.volume =  0.1;
+                audio.loop = true;
+            }
+            else{
+               audio.volume=0;
+            }
+
+            $('#background_menu').mouseenter(function(){
+                audio.play();
+            });
+
+        });
+    </script>
 
     <style>
         body {margin: 0;}
@@ -13,10 +40,12 @@
 </head>
 <body>
     <script type="module" src="./script.js"></script>
-    <audio autoplay loop>
+    <!-- 
+    <audio autoplay loop controls>
         <source src="audio/bkgMusic.mp3" type="audio/mp3"/>
         <source src="audio/bkgMusic.ogg" type="audio/ogg"/>
         Tu navegador no es compatible con el audio de HTML5
     </audio>
+    -->
 </body>
 </html>
